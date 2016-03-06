@@ -1,0 +1,9 @@
+rproxy :
+  image: eforce21/letsencrypt-nginx-proxy:latest
+  ports:
+    - "80:80"
+    - "443:443"
+  volumes:
+    - "/home/deploy/letsencrypt:/etc/letsencrypt"
+    - "/var/run/docker.sock:/tmp/docker.sock:ro"
+  restart: always
